@@ -10,8 +10,20 @@ body {
     text-align: center;
 }
 
+/* Subject in upper-left corner */
+.subject {
+    position: absolute;
+    top: 18px;
+    left: 25px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+/* Header */
 header {
-    padding: 50px 20px;
+    padding: 70px 20px 50px;
     background-color: #222;
     color: white;
 }
@@ -25,9 +37,11 @@ header p {
     font-size: 18px;
 }
 
+/* Homepage cards */
 .container {
     display: flex;
     justify-content: center;
+    align-items: stretch;
     gap: 40px;
     padding: 60px 30px;
     flex-wrap: wrap;
@@ -63,12 +77,132 @@ header p {
     padding: 0 20px 25px;
     color: #666;
 }
-.subject {
-    position: absolute;
-    top: 15px;
-    left: 20px;
+
+/* Activities page */
+.activities-container {
+    width: 92%;
+    max-width: 1100px;
+    margin: 50px auto;
+}
+
+/* Table header */
+.activity-header {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 1fr;
+    background-color: #2878b5;
     color: white;
-    font-size: 14px;
+    padding: 18px;
     font-weight: bold;
-    z-index: 10;
+    text-align: center;
+}
+
+/* Activity row */
+.activity {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 1fr;
+    align-items: center;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    min-height: 90px;
+}
+
+/* Activity name */
+.activity-name {
+    text-align: left;
+    padding: 20px;
+}
+
+.activity-name h2 {
+    font-size: 20px;
+}
+
+/* Submission */
+.submission {
+    text-align: center;
+}
+
+.submission a {
+    display: inline-block;
+    background-color: #2878b5;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.submission a:hover {
+    background-color: #185a8a;
+}
+
+/* Status */
+.status {
+    text-align: center;
+    font-weight: bold;
+}
+
+.submitted {
+    color: green;
+}
+
+.not-submitted {
+    color: red;
+}
+
+/* Back button */
+.back {
+    display: inline-block;
+    margin: 30px;
+    padding: 12px 25px;
+    background-color: #222;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.back:hover {
+    background-color: #444;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+    .subject {
+        position: relative;
+        top: auto;
+        left: auto;
+        background-color: #222;
+        padding: 15px;
+        font-size: 12px;
+    }
+
+    header {
+        padding: 40px 15px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .activity-header,
+    .activity {
+        grid-template-columns: 1fr;
+    }
+
+    .activity-header div {
+        padding: 5px;
+    }
+
+    .activity {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .activity-name {
+        text-align: center;
+    }
 }
